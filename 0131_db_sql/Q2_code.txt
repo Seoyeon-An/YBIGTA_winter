@@ -1,0 +1,1 @@
+SELECT c.CustomerName FROM Customers as c, OrderDetails as od, Orders as o, Products as p WHERE od.OrderID=o.OrderID and od.ProductID=p.ProductID and o.CustomerID=c.CustomerID GROUP BY o.CustomerID Having sum(od.Quantity * p.Price)>10000
